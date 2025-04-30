@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Welcome Splash Screen */
+.welcome-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551882547-ff40c63fe138');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    z-index: 9999;
+}
+
+.welcome-splash h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.welcome-splash p {
+    font-size: 1.5rem;
+    animation: fadeIn 1s ease-in 0.5s;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f1c40f, #e67e22, #2c3e50, #f1c40f);
+    background-size: 400%;
+    opacity: 0.1;
+    z-index: -1;
+    animation: gradient 15s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menu Item Animation */
+.menu-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, border 0.3s;
+    position: relative;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px) rotate(2deg);
+    border: 2px solid #f1c40f;
+}
+
+.menu-item img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.menu-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Spinning Loader */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #f1c40f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Welcome Section */
+#welcome {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1551882547-ff40c63fe138');
+    background-size: cover;
+    background-position: center;
+}
+
+#welcome h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+#welcome .lead {
+    font-size: 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+}
+
+#about img {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* Menu and Cart */
+.menu-item h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.menu-item input {
+    width: 70px;
+}
+
+.menu-item .btn {
+    width: 100%;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .welcome-splash h1 {
+        font-size: 2.5rem;
+    }
+
+    .welcome-splash p {
+        font-size: 1.2rem;
+    }
+
+    #welcome h1 {
+        font-size: 2.5rem;
+    }
+
+    #welcome .lead {
+        font-size: 1.2rem;
+    }
+
+    .menu-item img {
+        height: 150px;
+    }
+}
